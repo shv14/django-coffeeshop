@@ -1,0 +1,43 @@
+{% comment %} {% csrf_token %} {% endcomment %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <link href="{% static 'login.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <div class="navbar">
+        <a class="active" href="/"><i class="fa fa-fw fa-home" aria-hidden="true"></i> Home</a>
+        {% comment %} <a href="/search"><i class="fa fa-fw fa-search"></i> Search</a> {% endcomment %}
+        <a href="/contact"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+        <a href="/login"><i class="fa fa-fw fa-user"></i> Login</a>
+        <a href="/signin"><i class="fa fa-fw fa-user"></i> SignIn</a>
+    </div>
+    <section class="sec">
+        <form class="login" method = "POST" action = "login">
+            {% csrf_token %}
+            
+            <p class="text">Enter Email:</p>
+            <input type="email" placeholder="Email" name = "email">
+            <p class="text">Enter Username:</p>
+            <input type="text" placeholder="Username" name = "username">
+            <p class="text">Enter Password:</p>
+            <input type="password" placeholder="Password" name = "password">
+            <button type="submit" class="submit">Submit</button>
+            {% for message in messages %}
+            <p class = "message">{{message}}<p>
+            {% endfor %}
+        </form>
+    </section>
+</body>
+
+</html>
+

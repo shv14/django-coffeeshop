@@ -1,0 +1,111 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffe Shop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/style.css">
+    
+</head>
+<style>
+    
+</style>
+
+<body>
+    <div class="navbar">
+        <a class="active" href="/"><i class="fa fa-fw fa-home"></i> Home</a>
+        {% comment %} <a href="/search"><i class="fa fa-fw fa-search"></i> Search</a> {% endcomment %}
+        <a href="/contact"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+        <a href="/login" method = "POST" ><i class="fa fa-fw fa-user"></i> Login</a>
+        {% if user.is_authenticated %}
+        <a href="/signout"><i class="fa fa-fw fa-user"></i> SignOut</a>
+        {% else %}
+        <a href="/signin"><i class="fa fa-fw fa-user"></i> SignIn</a>
+        {% endif %}
+        
+    </div>
+    <section>
+        <div class="mainbox">
+            <div class="firsthalf">
+                {% if user.is_authenticated %}
+                <p class="bigtext">Welcome, {{user.username}}</p>
+                {% else %}
+                <p class="bigtext">Welcome to Coffee Shop</p>
+                {% endif %}
+                <p class="smalltext">Coffee is a beverage prepared from roasted coffee beans. Darkly colored, bitter,
+                    and slightly acidic, coffee
+                    has a stimulating effect on humans, primarily due to its caffeine content. It has the highest sales
+                    in the
+                    world market for hot drinks.
+
+                    The seeds of the Coffea plant's fruits are separated to produce unroasted green coffee beans. The
+                    beans are
+                    roasted and then ground into fine particles that are typically steeped in hot water before being
+                    filtered
+                    out, producing a cup of coffee. It is usually served hot, although chilled or iced coffee is common.
+                    Coffee
+                    can be prepared and presented in a variety of ways (e.g., espresso, French press, caffè latte, or
+                    already-brewed canned coffee). Sugar, sugar substitutes, milk, and cream are often added to mask the
+                    bitter
+                    taste or enhance the flavor.
+                </p>
+                <button class="buttons1">Follow us</button>
+                <button class="buttons2">Premium</button>
+                <!-- <div class="icon1"><img src="icon.png" alt=""></div> -->
+            </div>
+            <div class="secondhalf">
+                <!-- <div class="icon2 image-resize"><img src="icon.png" alt=""></div> -->
+                <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quaerat eaque error beatae rem iusto, distinctio voluptatem cupiditate ut libero aspernatur debitis commodi non consequatur laudantium pariatur voluptatibus nemo enim?z</p> -->
+            </div>
+        </div>
+
+    </section>
+
+    <section class="secright">
+        <div class="paras">
+            <p class="bigtext">Cinnamon</p>
+            <p class="smalltext">Cinnamon brings with it the smell and flavor of fall, and is a delicious addition to hot beverages. For taste alone, adding cinnamon to your brew is a great idea. But you’ve probably heard that cinnamon coffee is also healthy. Something that tastes amazing and is good for you? What nirvana is this?
+            </p>
+            <button class="order" onclick = placed()>Order Now</button>
+        </div>
+        <div class="thumbnail">
+            <img src="{% static 'cinnamon.png' %}" alt="">
+        </div>
+    </section>
+    <section class="secleft">
+        <div class="paras">
+            <p class="bigtext">Latte</p>
+            <p class="smalltext">A latte or caffè latte is a milk coffee that boasts a silky layer of foam as a real highlight to the drink. A true latte will be made up of one or two shots of espresso, steamed milk and a final, thin layer of frothed milk on top. These elements combined result in a balanced milky coffee that possesses an aesthetically pleasing look and a smooth texture.
+            </p>
+            <button class="order" onclick = placed()>Order Now</button>
+        </div>
+        <div class="thumbnail">
+            <img src = "{% static 'latte.png' %}" alt="">
+        </div>
+    </section>
+    <section class="secright">
+        <div class="paras">
+            <p class="bigtext">Espresso</p>
+            <p class="smalltext">Espresso is a delicious concentrated form of coffee, served in shots and it's often the coffee base of many other beverages, such as cappuccino, latte, americano and macchiato. An espresso is intense and bold, but nonetheless delicious, and the espresso is usually served in small demitasse-style cups for this reason.
+            </p>
+            <button class="order" onclick = placed()>Order Now</button>
+        </div>
+        <div class="thumbnail">
+            <img src = "{% static 'espresso.png' %}" alt="">
+        </div>
+    </section>
+    <footer>
+        <p class="textfooter">
+            Copyright &copy; 2026 - All right reserved
+        </p>
+    </footer>
+    {% comment %} <script src = "https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script> {% endcomment %}
+</body>
+
+</html>
+

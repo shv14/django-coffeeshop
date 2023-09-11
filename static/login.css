@@ -1,0 +1,95 @@
+* {
+    font-family: 'Lora', serif;
+    font-weight: 400;
+}
+
+.navbar {
+    display: flex;
+    position: sticky;
+    top: 0;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    margin: -8px;
+    height: 10vh;
+}
+
+a {
+    float: left;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    padding: 16px;
+    margin-right: 36px;
+}
+
+a:hover {
+    color: rgb(245, 196, 73);
+
+}
+
+.text {
+    margin-bottom: auto;
+    color: white;
+    font-size: 25px;
+}
+
+/* .area {
+    background-color: aqua;
+    width: 211px;
+    height: 27px;
+} */
+
+.login {
+    display: grid;
+    margin: 134px;
+    justify-content: center;
+    width: -webkit-fill-available;
+}
+
+input {
+    width: 217px;
+    border: 2px solid black;
+    border-radius: 6px;
+    padding: 10px;
+}
+
+.sec {
+    display: flex;
+    top: 0;
+    background: rgba(0, 0, 0, 0.7) url(coffee.png);
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+    background-size: cover;
+    margin: -8px;
+    margin-top: -58px;
+    margin-left: -10px;
+}
+
+.bigtext {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-left: 263px;
+}
+
+.submit {
+    font-size: 15px;
+    margin: 32px;
+    width: 178px;
+    border: 2px solid black;
+    border-radius: 6px;
+    padding: 8px;
+}
+
+.submit:hover {
+    color: rgb(209 158 30);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.message{
+    z-index: 1;
+    color: white;
+    text-align: center;
+    margin: -22px;
+}
